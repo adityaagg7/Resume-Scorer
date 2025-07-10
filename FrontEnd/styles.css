@@ -1,0 +1,122 @@
+:root {
+  --main-bg: #f9f6ff;
+  --accent: #a582ea;
+  --accent-dark: #7a5fd9;
+  --text-dark: #2a2a2a;
+  --text-light: #666;
+  --border: #d3c6f3;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--main-bg);
+  color: var(--text-dark);
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(150, 130, 200, 0.1);
+}
+
+h2, h3 {
+  color: var(--accent-dark);
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  color: var(--text-dark);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-dark);
+}
+
+pre#resultArea {
+  background-color: #f2edfb;
+  color: var(--text-dark);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
+
+/* Spinner */
+#spinner {
+  border: 6px solid #e0d9f7;
+  border-top: 6px solid var(--accent-dark);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Messages */
+#message {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+#message.success {
+  background-color: #d3f6d3;
+  color: #27632a;
+  border: 1px solid #7bd67b;
+  opacity: 1;
+}
+
+#message.error {
+  background-color: #ffe0e0;
+  color: #7a1f1f;
+  border: 1px solid #f58b8b;
+  opacity: 1;
+}

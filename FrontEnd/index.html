@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Scorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>RESUME SCORER</h2>
+  <form id="resumeForm">
+    <label>Upload Resume File:</label>
+    <input type="file" name="resume" id="resumeFile">
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="spinner" class="hidden"></div>
+
+  <div id="message" class="hidden"></div>
+
+  <h3>Result:</h3>
+  <pre id="resultArea">Waiting for input...</pre>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
