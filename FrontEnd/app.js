@@ -38,7 +38,7 @@ form.addEventListener("submit", async (e) => {
   showSpinner(true);
 
   try {
-    const response = await fetch("http://localhost:3000/score", {
+    const response = await fetch("https://b32907bddea5.ngrok-free.app/score", {
       method: "POST",
       body: formData,
     });

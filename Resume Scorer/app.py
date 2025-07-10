@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from typing import List
 import shutil
 import os
-from resume_scorer import extract_text, score_resume
+from resume_parser import extract_text, extract_sections_from_resume
 
 app = FastAPI()
 
@@ -19,12 +19,12 @@ async def score_resume_endpoint(file: UploadFile = File(...)):
 
         # Extract and score
         text = extract_text(file_location)
-        result = score_resume(text)
+        sections = extract_sections_from_resume(text)
 
         # Cleanup
         os.remove(file_location)
 
-        return result
+        return sections
 
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
